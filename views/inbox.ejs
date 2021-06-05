@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+          body { 
+            font-family: 'Times New Roman', Times, serif;
+            background-color: #cccccc; 
+            background: url(m4.0.png) no-repeat center center fixed; 
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+
+          }
+        table {
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+        border: 1px solid #ddd;
+        }
+
+        th, td {
+        text-align: left;
+        padding: 16px;
+        }
+
+        tr:nth-child(even) {
+        background-color: #f2f2f2;
+        }
+
+        tr:nth-child(odd) {
+        background-color: #ccc;
+        }
+
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+          }
+
+    </style>
+    <title>Inbox</title>
+</head>
+<body>
+    <br><br>
+    <div class="container">
+    <h1> <strong>Mail</strong></h1>
+    <table>
+        <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Subject</th>
+            <th>Message</th>
+            <th>Date</th>
+        </tr>
+        <% for(var i=0; i < data.length; i++) { %>
+           <tr>
+             <td><%= data[i].from %></td>
+             <td><%= data[i].to %></td>
+             <td><%= data[i].subject %></td>
+             <td><%= data[i].message %></td>
+             <td><%= data[i].date %></td>
+           </tr>
+        <% } %>
+    </table>
+</div>
+</body>
+</html>
+
+
