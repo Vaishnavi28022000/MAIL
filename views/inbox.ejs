@@ -45,11 +45,29 @@
             padding: 20px;
           }
 
+          input[type=submit] {
+            background-color: rgb(23,162,184);
+            border: honeydew;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+          }
+          
+          input[type=submit]:hover {
+            background-color: rgb(37, 108, 119);
+          }
     </style>
     <title>Inbox</title>
 </head>
 <body>
-    <br><br>
+    <br>
+    <form action="/back" method="POST">
+        <input type="hidden" name="email" id="email" value=<%= email%> >
+        <input type="submit" value="Back">
+    </form>
+
     <div class="container">
     <h1> <strong>Mail</strong></h1>
     <table>

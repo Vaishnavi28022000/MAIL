@@ -9,7 +9,7 @@
     <title>Mail</title>
     <style>
       body { 
-			text-align: center;
+			text-align: left;
         font-family: 'Times New Roman', Times, serif;
         background-color: #cccccc; 
         background: url(m4.0.png) no-repeat center center fixed; 
@@ -19,10 +19,6 @@
         background-size: cover;
 
       }
-        
-        body{
-        text-align: center;
-        }
 
         .btn {
             display: inline-block;
@@ -51,24 +47,24 @@
 <body>
   <br><br>
 <div class="container">
-    <h2 style="color: rgb(26, 74, 82); font-size: 3em"><strong> Welcome <%= user %></strong> </h2>
+    <h2 style="color: rgb(26, 74, 82); font-size: 3em"><strong> Welcome <%= email %></strong> </h2>
     <br>
 </div>
 
 <div class="container">
 <form action="/compose" method="POST">
-    <input type="hidden" name="email" id="email" value=<%= user%>>
+    <input type="hidden" name="email" id="email" value=<%= email%>>
     <button class="btn"><i class="fa fa-plus"></i> Compose</button>
 </form>
 <br>
 <form action="/inbox" method="POST">
-    <input type="hidden" name="email" id="email" value=<%= user%>>
+    <input type="hidden" name="email" id="email" value=<%= email%>>
     <button class="btn"><i class="fa fa-envelope"></i> Inbox</button>
 </form>
 <br>
 
 <form action="/sent" method="POST">
-    <input type="hidden" name="email" id="email" value=<%= user%>>
+    <input type="hidden" name="email" id="email" value=<%= email%>>
     <button class="btn"><i class="fa fa-envelope-o"></i> Sent</button>
 </form>
 <br>

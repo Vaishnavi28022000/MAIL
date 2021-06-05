@@ -63,6 +63,12 @@ app.post('/compose', urlencodedParser, function (req, res){
 	 res.render("compose",{'email':email});
 });
 
+app.post('/back', urlencodedParser, function (req, res){
+	var email= req.body.email;
+
+	 res.render("mail",{'email':email});
+});
+
 app.post('/inbox', urlencodedParser, function (req, res){
 	var email= req.body.email;
 
@@ -71,7 +77,7 @@ app.post('/inbox', urlencodedParser, function (req, res){
 
     db.collection("inbox").find(query).toArray(function(err, result) {
         if (err) throw err;
-        res.render('inbox',{'data': result})
+        res.render('inbox',{'data': result,'email':email})
 
     });
 });
@@ -84,10 +90,11 @@ app.post('/sent', urlencodedParser, function (req, res){
 
     db.collection("inbox").find(query).toArray(function(err, result) {
         if (err) throw err;
-        res.render('inbox',{'data': result})
+        res.render('inbox',{'data': result,'email':email})
 
     });
 });
+
 
 //-------------------------------------------//
 
@@ -102,7 +109,7 @@ app.post('/loggedin', urlencodedParser, function (req, res){
         console.log(result);
         if(result.length>0){
             if(result[0].password == password){
-                res.render('mail',{'user': result[0].email})
+                res.render('mail',{'email': result[0].email})
     
             }else{
                 console.log('Invalid password');
@@ -220,9 +227,9 @@ app.post('/mailsent', urlencodedParser, function (req, res){
             throw err;
         }
         console.log("Record Inserted Successfully Into Inbox  collection");
+        res.render('mail',{'email':from})
     });
 
-    res.render('mail',{'user':from})
 });
 
 //-------------------------------------------//
