@@ -70,14 +70,14 @@ input[type=submit]:hover {
           <input type="email" id="from" name="from" placeholder="From mail ID" value=<%= email%> readonly>
       <br>
         <label for="to">To</label>
-        <input type="email" id="to" name="to" placeholder="To mail ID">
+        <input type="email" id="to" name="to" placeholder="To mail ID" required>
       <br><br>
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="subject">
+          <input type="text" id="subject" name="subject" placeholder="subject" required>
       <br>
       
           <label for="message">Message</label>
-          <textarea id="message" name="message" placeholder="Message to  be sent" style="height:200px"></textarea>
+          <textarea id="message" name="message" placeholder="Message to  be sent" style="height:200px" required></textarea>
       
           <input type="submit" value="Submit">
     </form>
